@@ -666,6 +666,34 @@ p { margin: 0; color: var(--ash); }
 .footer-social a:hover { color: var(--brass); }
 
 /* =========================================================
+   WhatsApp floating button — always visible, fixed, simple
+   ========================================================= */
+.wa-float-btn {
+  position: fixed;
+  right: 24px;
+  top: 58%;
+  transform: translateY(-50%);
+  width: 58px;
+  height: 58px;
+  z-index: 999;
+  background: #25D366;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.35);
+}
+.wa-float-btn svg { pointer-events: none; }
+
+@media (max-width: 720px) {
+  .wa-float-btn {
+    right: 16px;
+    width: 52px;
+    height: 52px;
+  }
+}
+
+/* =========================================================
    Responsive
    ========================================================= */
 @media (max-width: 1024px) {
@@ -975,7 +1003,7 @@ p { margin: 0; color: var(--ash); }
   <div class="footer-top">
     <div class="footer-brand">
       <a href="#top" class="logo">
-        <img src = "logo.png" alt = "logo" width = "100px" height = "60px">
+       <img src = "logo.png" alt = "logo" width = "100px" height = "60px">
         <span>MD Furniture</span>
       </a>
       <p>Solid wood furniture, built one workshop at a time since 1998.</p>
@@ -998,7 +1026,7 @@ p { margin: 0; color: var(--ash); }
 
     <div class="footer-col">
       <h5>Visit</h5>
-      <p>Plot No. 129, Ground Floor, WHS Kirti Nagar, Lakad Mandi, New Delhi</p>
+      <p>Uppal Furniture 1/129, Kirti Nagar, Lakhan Mandi, Near Nitin Furniture, B104</p>
       <a href="tel:+918920914046">+91 89209 14046</a>
       <a href="mailto:hello@grainstudio.in">hello@grainstudio.in</a>
     </div>
@@ -1140,16 +1168,9 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
 });
-
-
-/* ---------- Floating WhatsApp button (stays visible while scrolling) ---------- */
 </script>
 
-<a href="https://wa.me/918920914046" target="_blank" rel="noopener" aria-label="Chat on WhatsApp"
-   style="position:fixed; right:24px; bottom:24px; z-index:999; width:58px; height:58px;
-          background:#25D366; border-radius:50%; display:flex; align-items:center; justify-content:center;
-          box-shadow:0 8px 24px rgba(0,0,0,0.35); transition:transform 0.25s ease;"
-   onmouseover="this.style.transform='scale(1.08)'" onmouseout="this.style.transform='scale(1)'">
+<a href="https://wa.me/918920914046" id="waFloatBtn" class="wa-float-btn" target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
   <svg width="30" height="30" viewBox="0 0 24 24" fill="#ffffff" aria-hidden="true">
     <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
     <path d="M12.004 2.003c-5.514 0-9.997 4.483-9.997 9.997 0 1.762.463 3.484 1.343 4.997L2 22l5.13-1.345a9.958 9.958 0 0 0 4.874 1.242h.004c5.514 0 9.997-4.483 9.997-9.997 0-2.671-1.04-5.182-2.929-7.071A9.938 9.938 0 0 0 12.004 2.003zm.001 18.187h-.003a8.196 8.196 0 0 1-4.176-1.144l-.3-.178-3.045.799.813-2.968-.196-.305a8.184 8.184 0 0 1-1.253-4.394c0-4.527 3.684-8.211 8.213-8.211a8.156 8.156 0 0 1 5.807 2.406 8.156 8.156 0 0 1 2.404 5.809c-.001 4.528-3.685 8.186-8.264 8.186z"/>
